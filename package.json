@@ -1,0 +1,17 @@
+{
+  "name": "FallOutNode",
+  "version": "1.0.0",
+  "description": "Fallout 4 IRC bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dave Richer <davericher@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "irc": "^0.3.12",
+    "irc-colors": "git://github.com/ir0ny1/irc-colors.js",
+    "moment": "^2.10.3",
+    "node-env-file": "^0.1.7"
+  }
+}

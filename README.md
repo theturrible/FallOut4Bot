@@ -1,2 +1,2 @@
-# FallOut4Bot
-# FallOut4Bot
+# Fallout 4 bot
+## irc.freenode.com
