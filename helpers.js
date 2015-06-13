@@ -1,9 +1,5 @@
-var c = require("irc-colors");
 var moment = require("moment");
 
-exports.coolColor = function(str) {
-    return c.rainbow(str,['red','white','yellow']);
-};
 exports.init = function () {
     /**
      * Add C# like string.format function to javascript
