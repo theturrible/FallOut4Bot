@@ -67,7 +67,7 @@ exports.init = function () {
  * @param time
  * @returns {moment.duration}
  */
-exports.timeDiff = function (time) {
+var timeDiff = function (time) {
     var ms = moment(time, "DD/MM/YYYY HH:mm:ss").diff(moment());
     return moment.duration(ms);
 };
@@ -77,7 +77,7 @@ exports.timeDiff = function (time) {
  * @returns {string}
  */
 exports.getCount = function () {
-    var d = this.timeDiff("14/06/2015 21:45:00");
+    var d = timeDiff("14/06/2015 21:45:00");
     return "{0} {1}, {2} {3}, {4} {5}, {6} {7} until Bethesda's E3 event! Please Stand By..".
         format(
             d.get('days'),
