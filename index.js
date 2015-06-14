@@ -1,7 +1,16 @@
 var irc = require("irc"),
-    helpers = require("./helpers.js"),
+    helpers = require("./helpers"),
     c = require("irc-colors"),
-    env = require("node-env-file");
+    env = require("node-env-file"),
+    threequotes = [
+        "Because one dog ain't enough, and two is too low, it's me, Three Dog!",
+        "Hey everybody, this is Three Dog, your friendly neighborhood disc jockey. What's a disc? Hell if I know, but I'm gonna keep talking anyway.",
+        "People of the Capital Wasteland, it is I, Three Dog, your ruler! Hear me, and obey! Oh sorry, that's that other radio station.",
+        "Hey nifty America, it's me, your President John Hen-- Hahaa, gotcha! Three Dog here, how's everyone doin'?",
+        "That's right, from Megaton to Girdershade, Paradise Falls to the Republic of Dave, we're coming to you loud and proud in a special live report.",
+        "The Enclave, and that includes their homecoming king, \"President\" John Henry Eden and his gorilla, Colonel Augustus Autumn, are NOT here to help you.",
+        "Now what if I, the all powerful Three Dog, bow-wow-wow, were to tell you that somewhere right here in the Capital Wasteland, is a place with lots of trees?"
+    ];
 
 // ENV File stuff
 env(__dirname + '/.env');
@@ -44,6 +53,10 @@ bot.addListener("message#", function(from,to,text,message) {
             break;
         case '!help' :
             bot.say(to, '!timer - for time left || !link - for links to streams and schedule');
+            break;
+        case '!hype' :
+            bot.say(to,threequotes[Math.floor(Math.random()*threequotes.length)]);
+            bot.say(to,c.rainbow("Three Dog",['red','white']));
             break;
 
     }
