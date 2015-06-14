@@ -40,7 +40,12 @@ bot.addListener("message#", function(from,to,text,message) {
             bot.say(to, helpers.getCount());
             break;
         case '!link' :
-            bot.say(to, 'Twitch: http://www.twitch.tv/bethesda');
+            bot.say(to, 'Twitch: http://www.twitch.tv/bethesda || Youtube: https://www.youtube.com/user/BethesdaSoftworks || E3: http://www.e3expo.com/takeover || Schedule: http://nebtown.info/e3/#');
+            break;
+        case '!help' :
+            bot.say(to, '!timer - for time left || !link - for links to streams and schedule');
+            break;
+
     }
 });
 
