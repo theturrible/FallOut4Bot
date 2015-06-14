@@ -49,7 +49,7 @@ bot.addListener("ctcp", function (from,to,text,type,message) {
 });
 
 bot.addListener("action", function(from, to, text, message) {
-   if (text.contains("waves at {0}".format(config.botName)))
+   if (text.startsWith("waves at {0}".format(config.botName)))
    {
         bot.action(to, "gives {0} a high five!".format(from));
    }
