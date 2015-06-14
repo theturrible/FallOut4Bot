@@ -52,11 +52,10 @@ bot.addListener("message#", function(from,to,text,message) {
             bot.say(to, 'Twitch: http://www.twitch.tv/bethesda || Youtube: https://www.youtube.com/user/BethesdaSoftworks || E3: http://www.e3expo.com/takeover || Schedule: http://nebtown.info/e3/#');
             break;
         case '!help' :
-            bot.say(to, '!timer - for time left || !link - for links to streams and schedule');
+            bot.say(from, '!timer - for time left || !link - for links to streams and schedule');
             break;
-        case '!hype' :
+        case '!threedog' :
             bot.say(to,threequotes[Math.floor(Math.random()*threequotes.length)]);
-            bot.say(to,c.rainbow("Three Dog",['red','white']));
             break;
 
     }
