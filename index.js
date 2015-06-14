@@ -26,7 +26,7 @@ var bot = new irc.Client(config.server,config.botName, {
 // Every 3 hours display the countdown to the channel
 bot.addListener("registered", function (message) {
     setInterval(function () {
-        bot.say("#fallout",helpers.getCount());
+        bot.say("##fallout",helpers.getCount());
     }, 1800000)
 });
 
