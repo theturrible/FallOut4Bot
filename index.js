@@ -8,12 +8,10 @@ env(__dirname + '/.env');
 
 // Configuration
 var config = {
-    channels: [process.env.channels],
+    channels: process.env.channels.split(' '),
     server: process.env.server,
     botName: process.env.nick
 };
-
-console.log(config.channels);
 
 // Add the helpers
 helpers.init();
@@ -34,16 +32,19 @@ bot.addListener("registered", function (message) {
 
 // Watch for commands
 bot.addListener("message#", function(from,to,text,message) {
-    // Tech Echo command
-    if(text.startsWith("!hello")) {
-        bot.say(to, irc.colors.wrap("light_red","Hello " + from));
+    switch (text.getFirst()) {
+        case '!hello' :
+            bot.say(to, c.rainbow( "Hello {0}".format(from),null));
+            break;
+        case '!timer' :
+            bot.say(to, helpers.getCount());
+            break;
     }
-    // Trigger the timer33333333333
-    else if(text.startsWith("!timer")) {
-        bot.say(to, helpers.getCount());
-    } else if(text.startsWith("!annoy"))
-    {
-        bot.say(to,c.rainbow(text.stripFirst(),null));
+});
+
+bot.addListener("ctcp", function (from,to,text,type,message) {
+    if(text.startsWith("TIME")) {
+        bot.say(from, helpers.getCount());
     }
 });
 
