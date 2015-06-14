@@ -39,6 +39,8 @@ bot.addListener("message#", function(from,to,text,message) {
         case '!timer' :
             bot.say(to, helpers.getCount());
             break;
+        case '!link' :
+            bot.say(to, 'Twitch: http://www.twitch.tv/bethesda');
     }
 });
 
